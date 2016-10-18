@@ -1,1 +1,3 @@
-angular.module('HealxApp', []);
+(function() {
+    angular.module('HealxApp', []);
+})();
