@@ -54,10 +54,10 @@
                                 <p>
                                     <label>DNA Sequence:</label>
                                     <br />
-                                    <textarea class="form-control" rows="3" id="DNAsequence" ng-model="upload.randomDnaSequence"></textarea>
+                                    <textarea class="form-control" rows="3" id="DNAsequence" ng-model="upload.inputDnaSequenceText"></textarea>
                                 </p>
                                 <p>
-                                    <label class="btn btn-default btn-file">
+                                    <label class="btn btn-default btn-file" ng-hide="(upload.inputDnaSequenceText !== null && upload.inputDnaSequenceText !== '')">
                                         Upload file<input type="file" style="display: none;">
                                     </label>
                                 </p>
