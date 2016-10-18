@@ -50,15 +50,17 @@
                         <p>Using Heal-x you can upload a DNA sequence and we will automagically.....</p>
                         <form class="form-inline">
                             <div class="form-group">
-
                                 <p>
                                     <label>DNA Sequence:</label>
                                     <br />
                                     <textarea class="form-control" rows="3" id="DnaSequence" ng-model="upload.inputDnaSequenceText"></textarea>
                                 </p>
                                 <p>
-                                    <label class="btn btn-default btn-file" ng-disabled="(upload.inputDnaSequenceText !== null && upload.inputDnaSequenceText !== '')">
-                                        Upload file<input type="file" style="display: none;">
+                                    <label class="btn btn-default btn-file" 
+                                           ng-disabled="(upload.inputDnaSequenceText !== null && upload.inputDnaSequenceText !== '')">
+                                        Upload file
+                                        <input type="file" style="display: none;"
+                                               on-read-file="upload.loadFileDnaSequence($fileContent)">
                                     </label>
                                     <button class="btn btn-default" 
                                             ng-disabled="(upload.inputDnaSequenceText === null || upload.inputDnaSequenceText === '')"
@@ -173,6 +175,7 @@
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/angular.min.js"></script>
     <script src="js/HealxApp.js"></script>
+    <script src="js/onReadFileDirective.js"></script>
     <script src="js/HealxUploadController.js"></script>
 
 </body>
