@@ -1,5 +1,11 @@
 ﻿/*JS code for building interactive genomic charts*/
 
+
+/* Mock DNA data for testing */
+
+dnaString = "TGGCCAGCCTCATCACCCCAACATCTCCCCACCTCCATTCTCCAACCACAGGGCCCTTGTCTCCTCTGTCCTTTCCCCTCCCCGAGCCAAGCCTCCTCCCTCCTCCACCTCCTCCACCTAATA";
+circosLayoutData = generateCircosLayout(dnaString, 50);
+
 /*create the circos object */
 var circos = new circosJS({
     container: '#circosChart',
@@ -26,5 +32,5 @@ circos
               radialOffset: 15,
           }
       },
-      layout_data).render();
+      circosLayoutData).render();
 
