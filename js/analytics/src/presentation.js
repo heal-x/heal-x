@@ -5,6 +5,9 @@
 
 dnaString = "TGGCCAGCCTCATCACCCCAACATCTCCCCACCTCCATTCTCCAACCACAGGGCCCTTGTCTCCTCTGTCCTTTCCCCTCCCCGAGCCAAGCCTCCTCCCTCCTCCACCTCCTCCACCTAATA";
 circosLayoutData = generateCircosLayout(dnaString, 50);
+console.log("CIRCOS layout", circosLayoutData);
+circosHeatmapData = generateCircosHeatmap(dnaString, 50);
+console.log(circosHeatmapData);
 
 /*create the circos object */
 var circos = new circosJS({
@@ -23,6 +26,7 @@ circos
       {
           innerRadius: 160,
           outerRadius: 200,
+          colorPalette: "Blues",
           ticks: { display: false },
           labels: {
               position: 'center',
@@ -32,5 +36,11 @@ circos
               radialOffset: 15,
           }
       },
-      circosLayoutData).render();
+      circosLayoutData)
+    .heatmap('GC content', {
+          innerRadius: 115,
+          outerRadius: 155,
+          logScale: false,
+          colorPalette: 'YlOrRd',
+    }, circosHeatmapData).render();
 
