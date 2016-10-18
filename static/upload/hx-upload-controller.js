@@ -1,7 +1,6 @@
-﻿
-
-angular.module('HealxApp').controller('HealxUploadController', ['HealxDataFactory', function (healxDataFactory) {
+﻿angular.module('hxApp').controller('HealxUploadController', ['HealxDataFactory', function (healxDataFactory) {
     this.inputDnaSequenceText = null;
+
     this.clearDnaSequence = function () {
         this.inputDnaSequenceText = null;
     }

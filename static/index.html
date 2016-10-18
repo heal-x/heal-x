@@ -41,7 +41,7 @@
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
-            <div class="container">
+            <div class="container" ng-controller="HealxUploadController as upload">
                 <div class="row">
                     <div class="col-md-9">
                         <h1>DNA sequencing made easy</h1>
@@ -54,13 +54,13 @@
                                     <textarea class="form-control" rows="3" id="DnaSequence" ng-model="upload.inputDnaSequenceText"></textarea>
                                 </p>
                                 <p>
-                                    <label class="btn btn-default btn-file" 
+                                    <label class="btn btn-default btn-file"
                                            ng-disabled="(upload.inputDnaSequenceText !== null && upload.inputDnaSequenceText !== '')">
                                         Upload file
                                         <input type="file" style="display: none;"
                                                on-read-file="upload.loadFileDnaSequence($fileContent)">
                                     </label>
-                                    <button class="btn btn-default" 
+                                    <button class="btn btn-default"
                                             ng-disabled="(upload.inputDnaSequenceText === null || upload.inputDnaSequenceText === '')"
                                             ng-click="upload.clearDnaSequence()">
                                         Clear
@@ -103,60 +103,15 @@
                         <div id="fourtx">&diams;</div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-
-                    </div>
-
-                    <!--<div class="col-md-12">
-                         <div id="one">&diams;</div>
-                         <div id="onex">&diams;</div>
-                         <div id="two">&diams;</div>
-                         <div id="twox">&diams;</div>
-                         <div id="three">&diams;</div>
-                         <div id="four">&diams;</div>
-                         <div id="five">&diams;</div>
-                         <div id="six">&diams;</div>
-                         <div id="threex">&diams;</div>
-                         <div id="fourx">&diams;</div>
-                         <div id="fivex">&diams;</div>
-                         <div id="sixx">&diams;</div>
-                         <div id="seven">&diams;</div>
-                         <div id="sevenx">&diams;</div>
-                         <div id="eight">&diams;</div>
-                         <div id="eightx">&diams;</div>
-                         <div id="nine">&diams;</div>
-                         <div id="ninex">&diams;</div>
-                         <div id="ten">&diams;</div>
-                         <div id="tenx">&diams;</div>
-                         <div id="eleven">&diams;</div>
-                         <div id="elevenx">&diams;</div>
-                         <div id="twelve">&diams;</div>
-                         <div id="twelvex">&diams;</div>
-                         <div id="thirt">&diams;</div>
-                         <div id="thirtx">&diams;</div>
-                         <div id="fourt">&diams;</div>
-                         <div id="fourtx">&diams;</div>
-                    <!-- </div>-->
-                </div>
-
-
-
             </div>
         </div>
 
         <div class="container">
             <!-- Example row of columns -->
             <div class="row">
-                <div class="col-md-6">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-md-6">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <div class="col-md-12">
+                    <h2>Output here</h2>
+                    <!--<div ng-view></div>-->
                 </div>
             </div>
         </div>
@@ -172,10 +127,12 @@
 
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/angular.min.js"></script>
-    <script src="js/HealxApp.js"></script>
-    <script src="js/onReadFileDirective.js"></script>
-    <script src="js/HealxDataFactory.js"></script>
-    <script src="js/HealxUploadController.js"></script>
+    <script src="js/vendor/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="shared/hx-data-factory.js"></script>
+    <script src="upload/hx-upload-controller.js"></script>
+    <script src="upload/hx-upload-directive-readfile.js"></script>
+    <script src="result/hx-result-module.js"></script>
 </body>
 </html>
 

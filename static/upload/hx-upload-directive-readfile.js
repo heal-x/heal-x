@@ -1,5 +1,5 @@
 ﻿(function () {
-    var myapp = angular.module('HealxApp', []);
+    var myapp = angular.module('hxApp');
 
     myapp.directive('onReadFile', function ($parse) {
         return {

@@ -1,4 +1,4 @@
-﻿angular.module('HealxApp').factory('HealxDataFactory', function () {
+﻿angular.module('hxApp').factory('HealxDataFactory', function () {
     // todo: store array of last parsed data in local storage?
     var lastParsedData = null;
 
