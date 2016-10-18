@@ -5,6 +5,10 @@ angular.module('HealxApp').controller('HealxUploadController', function () {
     this.clearDnaSequence = function () {
         this.inputDnaSequenceText = null;
     }
+
+    this.loadFileDnaSequence = function ($fileContent) {
+        this.inputDnaSequenceText = $fileContent;
+    }
 });
 
  
