@@ -52,12 +52,21 @@
       <div class="container">          
           <div class="row">
               <div class="col-md-9">
-                  <h1>DNA sequencing made easy,</h1>
-                  <p>Using Heal-x you can upload a DNA sequence and we wil automagically.....</p>
+                  <h1>DNA sequencing made easy</h1>
+                  <p>Using Heal-x you can upload a DNA sequence and we will automagically.....</p>
                   <form class="form-inline">
                       <div class="form-group">
-                          <label for="inputFile">File input</label>
-                          <input type="file" id="inputFile">
+                          
+                          <p>
+                              <label>DNA Sequence</label>
+                              <br />
+                              <textarea class="form-control" rows="3" id="DNAsequence"></textarea>
+                          </p>
+                          <p>
+                              <label class="btn btn-default btn-file">
+                                  Upload file<input type="file" style="display: none;">
+                              </label>
+                          </p>
                           <button class="btn btn-primary btn-lg">Analyse</button>
                       </div>
 
