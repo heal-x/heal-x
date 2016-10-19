@@ -7,5 +7,9 @@
         $routeProvider.when('/dnaResult/:id', {
             controller: 'HealxResultController',
             templateUrl: 'result/hx-result.html'
+        }).when('/dnaLoading', {
+            templateUrl: 'result/hx-loading.html'
+        }).when('/', {
+            templateUrl: 'result/hx-default.html'
         });
     });

@@ -12,7 +12,7 @@
     }
 
     this.parse = function () {
-        //$location.path('#/loading');
+        $location.path('/dnaLoading');
 
         console.log('Parsing..');
 
@@ -28,9 +28,7 @@
         var divPosition = $('#bottom').offset();
         var headerSize = $('#navBar').height() + 10;
         $('html, body').animate({ scrollTop: (divPosition.top - headerSize) }, "slow");
-
     }
-
 }]);
 
  
