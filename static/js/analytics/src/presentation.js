@@ -3,8 +3,8 @@
 
 /* Mock DNA data for testing */
 dnaString = "TGGCCAGCCTCATCACCCCAACATCTCCCCACCTCCATTCTCCAACCACAGGGCCCTTGTCTCCTCTGTCCTTTCCCCTCCCCGAGCCAAGCCTCCTCCCTCCTCCACCTCCTCCACCTAATA";
-createCircosVisualization(dnaString, 5, true);
-createNucleotideBarGraphVisualization(dnaString);
+//createCircosVisualization(dnaString, 5, true);
+//createNucleotideBarGraphVisualization(dnaString);
 
 function createNucleotideBarGraphVisualization(dnaString) {
     /*Create a visualization based on nucleotide distribution*/
