@@ -32,9 +32,10 @@ function createNucleotideBarGraphVisualization(dnaString) {
                        .attr("transform", function (d, i) { return "translate(0," + i * barHeight + ")"; });
 
 
-    bars.append("rect")
+    var rectangles = bars.append("rect")
     .attr("width", x)
-    .attr("height", barHeight - 1);
+    .attr("height", barHeight - 1)
+    .attr("id", function (d,i) {return nucleotideDataLabels[i];});
 
 
     bars.append("text")
@@ -42,6 +43,9 @@ function createNucleotideBarGraphVisualization(dnaString) {
     .attr("y", barHeight / 2)
     .attr("dy", ".35em")
     .text(function (d,i) { return nucleotideDataLabels[i]; });
+
+
+    rectangles.on("mouseover", function() { console.log(this.id); });
 }
 
 function createCircosVisualization(dnaString, windowSize) {

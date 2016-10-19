@@ -82,7 +82,7 @@ function _computeTotalNucleotides(diNucleotideContent) {
             end = windowIndices[j].end;
             //subArray = gcContentArray.slice(start, end)
             for (i = 0; i < end-start; i++) {
-                data.push([labelPrefix + j, i, i + 1, Math.random()]);
+                data.push([labelPrefix + j, i, i + 1, Math.random()*10]);
             }
         }
         return data;
