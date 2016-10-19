@@ -23,7 +23,7 @@
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navBar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -45,13 +45,13 @@
                 <div class="row">
                     <div class="col-md-9">
                         <h1>DNA sequencing made easy</h1>
-                        <p>Using Heal-x you can upload a DNA sequence and we will automagically.....</p>
+                        <p>Using Heal-x you can upload a DNA sequence and we will automagically do something</p>
                         <form class="form-inline">
                             <div class="form-group">
                                 <p>
                                     <label>DNA Sequence:</label>
                                     <br />
-                                    <textarea class="form-control" rows="3" id="DnaSequence" ng-model="upload.inputDnaSequenceText"></textarea>
+                                    <textarea class="form-control" rows="3" id="DnaSequence" ng-model="upload.inputDnaSequenceText" placeholder="Paste your DNA data or click upload below"></textarea>
                                 </p>
                                 <p>
                                     <label class="btn btn-default btn-file"
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" id="bottom">
             <!-- Example row of columns -->
             <div class="row">
                 <div class="col-md-12">
