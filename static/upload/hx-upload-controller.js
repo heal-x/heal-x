@@ -12,7 +12,7 @@
     }
 
     this.parse = function (newData) {
-        $location.path('/loading');
+        $location.path('/dnaLoading');
         console.log('Parsing..');
 
         // use the factory to handle what to do with the data!
@@ -23,7 +23,7 @@
         var headerSize = $('#navBar').height() + 10;
         $('html, body').animate({ scrollTop: (divPosition.top - headerSize) }, "slow");
 
-        $location.path('/dnaResult');
+       // $location.path('/dnaResult');
     };
 }]);
 
