@@ -12,10 +12,13 @@ function computeCodonContent( dnaString ){
     return codonContent;
 }
 
-function splitIntoWindowsByWindowSize(dnaString, windowSize) {
+function splitIntoWindowsByWindowSize(dnaString, windowSize, limit) {
     /*Splits a DNA string into equal windows*/
     var len = dnaString.length;
     var windowNumber = Math.floor(len / windowSize); //number of fullSized windows
+    if (limit) {
+        windowNumber = Math.min(windowNumber, 8);
+    }
     var remainingWindowLen = len % windowSize; //size of lastWindow
     var totalWindows = remainingWindowLen > 0 ? windowNumber + 1 : windowNumber;
     var windowArray = new Array(totalWindows);
@@ -67,7 +70,7 @@ function _computeTotalNucleotides(diNucleotideContent) {
     }
 
     function generateCircosHeatmap(dnaString, windowSize) {
-        var output = splitIntoWindowsByWindowSize(dnaString, windowSize);
+        var output = splitIntoWindowsByWindowSize(dnaString, windowSize, true);
         var windows = output[0];
         var windowIndices = output[1];
         console.log(windowIndices);
@@ -82,17 +85,16 @@ function _computeTotalNucleotides(diNucleotideContent) {
                 data.push([labelPrefix + j, i, i + 1, Math.random()]);
             }
         }
-        console.log("DATA",data);
         return data;
     }
 
     function generateCircosLayout(dnaString, windowSize) {
-        var output = splitIntoWindowsByWindowSize(dnaString, windowSize);
+        var output = splitIntoWindowsByWindowSize(dnaString, windowSize, true);
         var windows = output[0];
         var windowIndices = output[1];
-        console.log(windows);
+        console.log(windows.length);
         var layout_data = [];
-        colorPalette = colorbrewer['RdBu'][windows.length]
+        colorPalette = colorbrewer['RdYlGn'][windows.length]
         for (i = 0; i < windows.length; i++) {
             dnaWindow = windows[i];
             len = dnaWindow.length;
