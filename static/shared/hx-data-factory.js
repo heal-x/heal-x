@@ -1,15 +1,12 @@
-﻿angular.module('hxApp').factory('HealxDataFactory', function () {
-    // todo: store array of last parsed data in local storage?
-    var lastParsedData = null;
-
+﻿angular.module('hxApp').factory('HealxDataFactory', function ($http) {
     return {
         uploadData: function (newData) {
-            console.log('Called data factory upload data');
-            // TODO: parse the DNA data here
-            
-            // save
-            lastParsedData = newData;
+            console.log('Called data factory upload data');                    
+            return $http.post('/uploadDna', newData);
+
         },
-        dnaSequence: lastParsedData
+        getDnaSequence: function (id) {
+            return $http.get('/dnaSequence/' + id);
+        }
     };
 });
