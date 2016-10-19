@@ -17,6 +17,7 @@
     </style>
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body>
@@ -44,32 +45,44 @@
             <div class="container" ng-controller="HealxUploadController as upload">
                 <div class="row">
                     <div class="col-md-9">
-                        <h1>DNA sequencing made easy</h1>
-                        <p>Using Heal-x you can upload a DNA sequence and we will automagically do something</p>
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <p>
-                                    <label>DNA Sequence:</label>
-                                    <br />
-                                    <textarea class="form-control" rows="3" id="DnaSequence" ng-model="upload.inputDnaSequenceText" placeholder="Paste your DNA data or click upload below"></textarea>
-                                </p>
-                                <p>
-                                    <label class="btn btn-default btn-file"
-                                           ng-disabled="(upload.inputDnaSequenceText !== null && upload.inputDnaSequenceText !== '')">
-                                        Upload file
-                                        <input type="file" style="display: none;"
-                                               on-read-file="upload.loadFileDnaSequence($fileContent)">
-                                    </label>
-                                    <button class="btn btn-default"
-                                            ng-disabled="(upload.inputDnaSequenceText === null || upload.inputDnaSequenceText === '')"
-                                            ng-click="upload.clearDnaSequence()">
-                                        Clear
-                                    </button>
-
-                                </p>
-                                <button class="btn btn-primary btn-lg" ng-click="upload.parse()">Analyse</button>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>DNA sequencing made easy</h1>
+                                <p>Using Heal-x you can upload a DNA sequence and we will automagically do something</p>
                             </div>
+                        </div>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-10">
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="3" id="DnaSequence" ng-model="upload.inputDnaSequenceText" 
+                                                      placeholder="Paste your DNA data or click upload file...." style="height: 100px;"></textarea>
+                                        </div>
+                                </div>
+                                <div class="col-md-2 nopadding">
+                                    <div style="vertical-align: central">
+                                        <label class="btn btn-default btn-file"
+                                               ng-disabled="(upload.inputDnaSequenceText !== null && upload.inputDnaSequenceText !== '')" style="width: 120px;">
+                                            Upload file <i class="fa fa-upload" aria-hidden="true"></i>
 
+                                            <input type="file" style="display: none;"
+                                                   on-read-file="upload.loadFileDnaSequence($fileContent)">
+
+                                        </label>
+
+                                        <button class="btn btn-default"
+                                                ng-disabled="(upload.inputDnaSequenceText === null || upload.inputDnaSequenceText === '')"
+                                                ng-click="upload.clearDnaSequence()" style="width: 120px; margin-top: 4px;">
+                                            Clear <i class="fa fa-eraser" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <button class="btn btn-success" ng-click="upload.parse()">Analyse <i class="fa fa-medkit" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <div class="col-md-3" id="gene-animation">
