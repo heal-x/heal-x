@@ -4,12 +4,13 @@
     <title>Genomic Charting for Heal-X</title>
     <link href="css/colorbrewer.css" rel="stylesheet" />
 
+
     <style>
         #barChart rect {
             fill: steelblue;
         }
 
-        .chart text {
+        #barChart text {
             fill: white;
             font: 10px sans-serif;
             text-anchor: middle;
@@ -17,8 +18,14 @@
     </style>
 </head>
 <body>
+    <section id="geneAnalysis">
+        <h2> Gene Analysis</h2>
     <svg id="circosChart"></svg>
+    </section>
+    <section id="nucleotideContent">
+        <h3>  Nucleotide content </h3>
     <svg id="barChart"></svg>
+    </section>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://cdn.rawgit.com/nicgirault/circosJS/master/dist/circosJS.js" type="text/javascript"></script>
     <script src="js/analytics/src/colorbrewer.js"></script>

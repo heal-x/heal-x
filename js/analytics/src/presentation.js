@@ -10,36 +10,45 @@ function createNucleotideBarGraphVisualization(dnaString) {
     /*Create a visualization based on nucleotide distribution*/
     var nucleotideData = new Array(4);
     var nucleotideDataDict = computeCodonContent(dnaString);
+
     nucleotideData[0] = nucleotideDataDict['A'];
     nucleotideData[1] = nucleotideDataDict['C'];
     nucleotideData[2] = nucleotideDataDict['T'];
     nucleotideData[3] = nucleotideDataDict['G'];
-    console.log(nucleotideData);
-    var barWidth = 20;
-    var chartHeight = 420;
 
-    var y = d3.scale.linear()
-    .range([chartHeight, 0]);
+    var nucleotideDataLabels = ['A', 'C', 'T', 'G'];
+    var barHeight = 20;
+    var chartWidth = 420;
+
+
+
+    var x = d3.scale.linear()
+    .domain([0, d3.max(nucleotideData)])
+    .range([0, chartWidth]);
+    console.log(x(20));
 
     var svgChart = d3.select('#barChart')
-      .attr("height", chartHeight)
-      .attr("width", barWidth * nucleotideData.length)
+      .attr("height", barHeight * nucleotideData.length)
+      .attr("width", chartWidth);
 
     var bars = svgChart.selectAll("g")
                        .data(nucleotideData)
                        .enter()
                        .append("g")
-                       .attr("transform", function (d, i) { "translate(" + i * barWidth + ",0)"; });
+                       .attr("transform", function (d, i) { return "translate(0," + i * barHeight + ")"; });
 
 
     bars.append("rect")
-    .attr("length", function(d) { return chartHeight - y(d.value); })
-    .attr("width", barWidth - 1);      
+    .attr("width", x)
+    .attr("height", barHeight - 1);
+
+
+    bars.append("text")
+    .attr("x", function (d) { return x(d) - 50; })
+    .attr("y", barHeight / 2)
+    .attr("dy", ".35em")
+    .text(function (d,i) { return nucleotideDataLabels[i]; });
 }
-
-
-
-
 
 function createCircosVisualization(dnaString, windowSize) {
     
