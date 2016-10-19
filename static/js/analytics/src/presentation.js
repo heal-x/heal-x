@@ -1,11 +1,5 @@
 ﻿/*JS code for building interactive genomic charts*/
-
-
 /* Mock DNA data for testing */
-dnaString = "TGGCCAGCCTCATCACCCCAACATCTCCCCACCTCCATTCTCCAACCACAGGGCCCTTGTCTCCTCTGTCCTTTCCCCTCCCCGAGCCAAGCCTCCTCCCTCCTCCACCTCCTCCACCTAATA";
-//createCircosVisualization(dnaString, 5, true);
-//createNucleotideBarGraphVisualization(dnaString);
-
 function createNucleotideBarGraphVisualization(dnaString) {
     /*Create a visualization based on nucleotide distribution*/
     var nucleotideData = new Array(4);
@@ -86,8 +80,4 @@ function createCircosVisualization(dnaString, windowSize) {
 
 }
 
-/* mock up layout data for testing*/
-var layout_data = [
-    { "len": 31, "color": "#8dd3c7", "label": "Gene 1", "id": "gene1" },
-    { "len": 28, "color": "#ffffb3", "label": "Gene 2", "id": "gene2" }];
 
