@@ -26,7 +26,7 @@
             healxDataFactory.uploadData(
                 { dnaSequence: uploadedData })
                 .then(display);
-        }, 5000);
+        }, 7000);
     };
 
     function display(response) {
