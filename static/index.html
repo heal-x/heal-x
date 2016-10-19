@@ -53,10 +53,10 @@
                         </div>
                         <form>
                             <div class="row">
-                                <div class="col-md-10">
+                                <div class="col-md-9">
                                         <div class="form-group">
                                             <textarea class="form-control" rows="3" id="DnaSequence" ng-model="upload.inputDnaSequenceText" 
-                                                      placeholder="Paste your DNA data or click upload file...." style="height: 100px;"></textarea>
+                                                      placeholder="Paste your DNA data or click upload file...." style="height: 110px;"></textarea>
                                         </div>
                                 </div>
                                 <div class="col-md-2 nopadding">
@@ -75,12 +75,14 @@
                                                 ng-click="upload.clearDnaSequence()" style="width: 120px; margin-top: 4px;">
                                             Clear <i class="fa fa-eraser" aria-hidden="true"></i>
                                         </button>
+
+
+                                        <button style="width: 120px; margin-top: 4px;" class="btn btn-success"
+                                                ng-disabled="(upload.inputDnaSequenceText === null || upload.inputDnaSequenceText === '')"
+                                                ng-click="upload.parse()">
+                                            Analyse <i class="fa fa-medkit" aria-hidden="true"></i>
+                                        </button>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <button class="btn btn-success" ng-click="upload.parse()">Analyse <i class="fa fa-medkit" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </form>
