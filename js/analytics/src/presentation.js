@@ -4,24 +4,18 @@
 /* Mock DNA data for testing */
 
 dnaString = "TGGCCAGCCTCATCACCCCAACATCTCCCCACCTCCATTCTCCAACCACAGGGCCCTTGTCTCCTCTGTCCTTTCCCCTCCCCGAGCCAAGCCTCCTCCCTCCTCCACCTCCTCCACCTAATA";
-circosLayoutData = generateCircosLayout(dnaString, 50);
-console.log("CIRCOS layout", circosLayoutData);
-circosHeatmapData = generateCircosHeatmap(dnaString, 50);
-console.log(circosHeatmapData);
-
-/*create the circos object */
-var circos = new circosJS({
-    container: '#circosChart',
-    width: 420,
-    height: 420,
-});
-
-/* mock up layout data for testing*/
-var layout_data = [
-    { "len": 31, "color": "#8dd3c7", "label": "Gene 1", "id": "gene1" },
-    { "len": 28, "color": "#ffffb3", "label": "Gene 2", "id": "gene2" }];
-
-circos
+createCircosVisualization( dnaString, 50)
+function createCircosVisualization(dnaString, windowSize) {
+    
+    /*create the circos object */
+    var circos = new circosJS({
+        container: '#circosChart',
+        width: 420,
+        height: 420,
+    });
+    var circosLayoutData = generateCircosLayout(dnaString, windowSize);
+    var circosHeatmapData = generateCircosHeatmap(dnaString, windowSize);
+    circos
   .layout(
       {
           innerRadius: 160,
@@ -38,9 +32,17 @@ circos
       },
       circosLayoutData)
     .heatmap('GC content', {
-          innerRadius: 115,
-          outerRadius: 155,
-          logScale: false,
-          colorPalette: 'YlOrRd',
+        innerRadius: 115,
+        outerRadius: 155,
+        logScale: false,
+        colorPalette: 'YlOrRd',
     }, circosHeatmapData).render();
+
+
+}
+
+/* mock up layout data for testing*/
+var layout_data = [
+    { "len": 31, "color": "#8dd3c7", "label": "Gene 1", "id": "gene1" },
+    { "len": 28, "color": "#ffffb3", "label": "Gene 2", "id": "gene2" }];
 
