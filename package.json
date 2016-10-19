@@ -10,14 +10,15 @@
       "repository": {
         "type": "git",
         "url": "https://github.com/heal-x/heal-x.git"
-      },
-      "author": "",
-      "license": "ISC",
+    },
+    "author": "",
+    "license": "ISC",
     "bugs": {
         "url": "https://github.com/heal-x/heal-x/issues"
-      },
+    },
     "homepage": "https://github.com/heal-x/heal-x",
     "dependencies": {
+        "body-parser": "^1.15.2",
         "colors": "^1.1.2",
         "express": "^4.14.0"
     }
