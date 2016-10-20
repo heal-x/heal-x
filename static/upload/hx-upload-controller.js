@@ -18,7 +18,7 @@
     };
 
     this.loadFileDnaSequence = function ($fileContent) {
-        this.inputDnaSequenceText = $fileContent;
+        this.inputDnaSequenceText = $fileContent.trim();
     };
 
     this.parse = function () {
