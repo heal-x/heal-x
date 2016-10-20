@@ -10,6 +10,9 @@
         getDnaSequence: function (id) {
             return $http.get('/dnaSequence/' + id);
         },
+        getPreviousSequences: function () {
+            return $http.get('/previousSequences');
+        },
         hasParsed: parsedCompleted,
         setParsed: function (value) {
             console.log('set parsed to: ' + value);
