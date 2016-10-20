@@ -1,0 +1,10 @@
+﻿<div class="container" ng-controller="HealxHistoryController as history" 
+     style="height: 100vh;">
+    <h1>DNA sequence history</h1>
+    <div ng-show="resut.errorMessage">{{history.errorMessage | json}}</div>    
+    <ul>
+        <li ng-repeat="result in history.historicalData">
+            <a href="#/dnaResult/{{result.id}}">{{result.id}} {{result.date | date: 'dd/MMM/yyyy hh:mm:ss'}} </a>
+        </li>
+    </ul>
+</div>

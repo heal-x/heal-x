@@ -15,6 +15,7 @@ var result = [
 var previousSequences = [
     {
         id: 1,
+        date: Date.now(),
         dnaSequence: 'TGGCCAGCCTCATCACCCCAACATCTCCCCACCTCCATTCTCCAACCACAGGGCCCTTGTCTCCTCTGTCCTTTCCCCTCCCCGAGCCAAGCCTCCTCCCTCCTCCACCTCCTCCACCTAATA',
         result: result
     }];
@@ -52,7 +53,7 @@ app.post('/uploadDna', function (req, res) {
         .end();
     }
     console.log('dna analysis requested for: ' + dnaSequence);
-    dnaResult = { id: nextResId++, dnaSequence: dnaSequence, result: result };
+    dnaResult = { id: nextResId++, date: Date.now(), dnaSequence: dnaSequence, result: result };
     previousSequences.push(dnaResult)
     res.status(201).json({ id: dnaResult.id });
 });
