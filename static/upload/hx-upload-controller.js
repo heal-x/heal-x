@@ -1,5 +1,5 @@
-﻿angular.module('hxApp').controller('HealxUploadController', ['$location', 'HealxDataFactory',
-    function ($location, healxDataFactory) {
+﻿angular.module('hxApp').controller('HealxUploadController', ['$location', '$timeout', 'HealxDataFactory',
+    function ($location, $timeout, healxDataFactory) {
 
     this.inputDnaSequenceText = null;
 
@@ -14,20 +14,23 @@
     this.parse = function () {
         $location.path('/dnaLoading');
 
-        console.log('Parsing..');
-
-        // use the factory to handle what to do with the data!
-        healxDataFactory.uploadData({ dnaSequence: this.inputDnaSequenceText })
-            .then(display);        
-    };
-
-    function display(response) {
-        $location.path('/dnaResult/' + response.data.id);
-
         // scroll into view
         var divPosition = $('#bottom').offset();
         var headerSize = $('#navBar').height() + 10;
         $('html, body').animate({ scrollTop: (divPosition.top - headerSize) }, "slow");
+
+        var uploadedData = this.inputDnaSequenceText;
+        $timeout(function () { 
+            console.log('Parsing..');
+
+            healxDataFactory.uploadData(
+                { dnaSequence: uploadedData })
+                .then(display);
+        }, 7000);
+    };
+
+    function display(response) {
+        $location.path('/dnaResult/' + response.data.id);
     }
 }]);
 

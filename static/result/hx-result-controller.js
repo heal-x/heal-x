@@ -7,10 +7,17 @@
                 .then(display.bind(this), displayError.bind(this));
 
         function display(response) {
-            console.log(response);
+            //console.log(response);
             this.dnaSequenceData = response.data;
+            createCircosVisualisation(this.dnaSequenceData.dnaSequence);
         }
 
+        function createCircosVisualisation(dnaString) {
+            //dnaString = "TGGCCAGCCTCATCACCCCAACATCTCCCCACCTCCATTCTCCAACCACAGGGCCCTTGTCTCCTCTGTCCTTTCCCCTCCCCGAGCCAAGCCTCCTCCCTCCTCCACCTCCTCCACCTAATA"
+            createCircosVisualization(dnaString, 5, true);
+            createNucleotideBarGraphVisualization(dnaString);
+        }
+        
         function displayError(err) {
             this.errorMessage = err;
         }

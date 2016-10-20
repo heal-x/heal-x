@@ -58,6 +58,6 @@ app.post('/uploadDna', function (req, res) {
     res.status(201).json({ id: dnaResult.id });
 });
 
-app.listen(8080, function () {
+app.listen(process.env.PORT || 8080, function () {
     console.log('Running...');
 });
