@@ -4,37 +4,17 @@
 }
 
 #overlay1 {
-margin: auto;
-position: absolute;
-top: 50px; left: 50px;
-bottom: 50px; right: 50px;
-text-align: center;
-z-index:5;
-display: flex;
-justify-content: center; /* align horizontal */
-align-items: center; /* align vertical */
+    margin: auto;
+    position: absolute;
+    top: 50px; left: 50px;
+    bottom: 50px; right: 50px;
+    text-align: center;
+    z-index:5;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
 }
 
-.blink {
-    animation-duration: 1s;
-    animation-name: blink;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
-}
-@keyframes blink {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-
-.fade.ng-enter {
-    animation: 5s fadeIn;
-}
 
 .ourLogo {
     animation: bounce 2s infinite;
@@ -43,9 +23,9 @@ align-items: center; /* align vertical */
 textarea.ng-invalid {
     background-color: pink;
 }
-            #gene-animation {
 
-            animation: fadein 15s;
+            #gene-animation {
+                animation: 15s fadeIn;
                 margin: 0 auto;
                 margin-top: 50px;
                 text-align: center;
