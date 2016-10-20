@@ -1,7 +1,7 @@
 ﻿
     // execute this code
     // register module ('name', deps)
-    var mod = angular.module('hxResult', ['ngRoute']);
+var mod = angular.module('hxResult', ['ngRoute','ngAnimate']);
 
     mod.config(function ($routeProvider) {
         $routeProvider.when('/dnaResult/:id', {
