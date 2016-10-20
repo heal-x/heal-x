@@ -7,6 +7,9 @@
         },
         getDnaSequence: function (id) {
             return $http.get('/dnaSequence/' + id);
+        },
+        getPreviousSequences: function () {
+            return $http.get('/previousSequences');
         }
     };
 });
