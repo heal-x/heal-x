@@ -56,7 +56,7 @@
                                 <div class="col-md-9">
                                         <div class="form-group">
                                             <textarea class="form-control" rows="3" id="DnaSequence" ng-model="upload.inputDnaSequenceText" 
-                                                      placeholder="Paste your DNA data or click upload file...." style="height: 110px;"></textarea>
+                                                      placeholder="Paste your DNA data or click upload file...." style="height: 110px;" ng-disabled="upload.hasParsed"></textarea>
                                         </div>
                                 </div>
                                 <div class="col-md-2 nopadding">
@@ -66,7 +66,7 @@
                                             Upload file <i class="fa fa-upload" aria-hidden="true"></i>
 
                                             <input type="file" style="display: none;"
-                                                   on-read-file="upload.loadFileDnaSequence($fileContent)">
+                                                   on-read-file="upload.loadFileDnaSequence($fileContent)" ng-click="upload.clear()">
 
                                         </label>
 
@@ -98,7 +98,7 @@
             <!-- Example row of columns -->
             <div class="row">
                 <div class="col-md-12">
-                    <div ng-view></div>
+                    <div ng-view class="fade"></div>
                 </div>
             </div>
         </div>

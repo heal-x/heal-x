@@ -2,14 +2,24 @@
     function ($location, $timeout, healxDataFactory) {
 
     this.inputDnaSequenceText = null;
+    this.hasParsed = healxDataFactory.hasParsed;
 
     this.clearDnaSequence = function () {
         this.inputDnaSequenceText = null;
-    }
+        this.inputValue = null;
+    };
+
+    this.clear = function () {
+        angular.element("input[type='file']").val(null);
+    };
+
+    this.uploadFile = function (event) {
+        var files = event.target.files;
+    };
 
     this.loadFileDnaSequence = function ($fileContent) {
         this.inputDnaSequenceText = $fileContent;
-    }
+    };
 
     this.parse = function () {
         $location.path('/dnaLoading');
@@ -31,7 +41,8 @@
 
     function display(response) {
         $location.path('/dnaResult/' + response.data.id);
+
+        // mark parsed
+        healxDataFactory.setParsed(true);
     }
 }]);
-
- 
